@@ -15,7 +15,9 @@ from .const import CONTENT_AUTH_EXPIRY_TIME, MEDIA_CLASS_DIRECTORY
 
 
 @callback
-def async_process_play_media_url(hass: HomeAssistant, media_content_id: str) -> str:
+def async_process_play_media_url(
+    hass: HomeAssistant, media_content_id: str, *, allow_hostname: bool = False
+) -> str:
     """Update a media URL with authentication if it points at Home Assistant."""
     if media_content_id[0] != "/" and not is_hass_url(hass, media_content_id):
         return media_content_id
@@ -36,7 +38,9 @@ def async_process_play_media_url(hass: HomeAssistant, media_content_id: str) -> 
 
     # prepend external URL
     if media_content_id[0] == "/":
-        media_content_id = f"{get_url(hass)}{media_content_id}"
+        media_content_id = (
+            f"{get_url(hass, allow_hostname=allow_hostname)}{media_content_id}"
+        )
 
     return media_content_id
 
