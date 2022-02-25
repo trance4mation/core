@@ -1,6 +1,7 @@
 """PID trip resolver sensor."""
 from __future__ import annotations
 
+import datetime
 from http import HTTPStatus
 import logging
 
@@ -159,8 +160,10 @@ class PidData:
     @staticmethod
     def distiller(trip):
         """Map trip data to a more efficient form."""
+        arrival = trip["arrival_timestamp"]["scheduled"]
+        arrival_str = datetime.datetime.fromisoformat(arrival).strftime("%H:%M")
         return {
-            "arrival": trip["arrival_timestamp"]["scheduled"],
+            "arrival": arrival_str,
             "route": trip["route"]["short_name"],
             "delay": trip["delay"]["minutes"] if trip["delay"]["is_available"] else 0,
         }
