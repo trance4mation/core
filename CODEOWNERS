@@ -713,6 +713,8 @@ homeassistant/components/pi_hole/* @fabaff @johnluetke @shenxn
 tests/components/pi_hole/* @fabaff @johnluetke @shenxn
 homeassistant/components/picnic/* @corneyl
 tests/components/picnic/* @corneyl
+homeassistant/components/pid/* @trance4mation
+tests/components/pid/* @trance4mation
 homeassistant/components/pilight/* @trekky12
 tests/components/pilight/* @trekky12
 homeassistant/components/plaato/* @JohNan

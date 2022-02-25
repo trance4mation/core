@@ -1,0 +1,14 @@
+{
+  "domain": "pid",
+  "name": "PID trip resolver",
+  "documentation": "https://www.home-assistant.io/integrations/pid",
+  "requirements": [],
+  "ssdp": [],
+  "zeroconf": [],
+  "homekit": {},
+  "dependencies": [],
+  "codeowners": [
+    "@trance4mation"
+  ],
+  "iot_class": "cloud_polling"
+}
